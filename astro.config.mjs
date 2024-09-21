@@ -30,6 +30,13 @@ export default defineConfig({
       },
       sidebar: [
         { label: 'Home', link: '/' },
+        {
+          label: "About us",
+          items: [
+            { label: "Information", slug: "about-us/information" },
+            { label: "FAQ", slug: "about-us/faq" },
+          ],
+        },
       ],
     }),
   ],

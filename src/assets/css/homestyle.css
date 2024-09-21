@@ -1,0 +1,8 @@
+body {
+    background-image: radial-gradient(circle at center -20%, var(--sl-color-accent), var(--sl-color-black) 75%);
+    background-repeat: no-repeat;
+}
+
+.header a.site-title {
+    color: var(--sl-color-white);
+  }
