@@ -37,6 +37,15 @@ export default defineConfig({
             { label: "FAQ", slug: "about-us/faq" },
           ],
         },
+        {
+          label: "Grew Versionchecker",
+          items: [
+            { label: "Information", slug: "grew_versionchecker/read-me" },
+            { label: "Requirements", slug: "grew_versionchecker/required" },
+            { label: "Install", slug: "grew_versionchecker/install" },
+            { label: "Config", slug: "grew_versionchecker/config" },
+          ],
+        },
       ],
     }),
   ],
