@@ -40,10 +40,10 @@ export default defineConfig({
         {
           label: "Grew Versionchecker",
           items: [
-            { label: "Information", slug: "grew_versionchecker/read-me" },
-            { label: "Requirements", slug: "grew_versionchecker/required" },
-            { label: "Install", slug: "grew_versionchecker/install" },
-            { label: "Config", slug: "grew_versionchecker/config" },
+            { label: "Information", translations: {'de': 'Information'}, slug: "grew_versionchecker/readme", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            //{ label: "Requirements", translations: {'de': 'Anforderungen'},  slug: "grew_versionchecker/required" },
+            { label: "Install", translations: {'de': 'Installation'},  slug: "grew_versionchecker/install" },
+            { label: "Config", translations: {'de': 'Config'},  slug: "grew_versionchecker/config" },
           ],
         },
       ],
