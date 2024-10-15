@@ -40,11 +40,11 @@ export default defineConfig({
         {
           label: "Grew Versionchecker",
           items: [
-            { label: "Information", translations: {'de': 'Information'}, slug: "grew_versionchecker/readme", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "Information", translations: {'de': 'Information'}, slug: "grew_versionchecker/readme"},
             //{ label: "Requirements", translations: {'de': 'Anforderungen'},  slug: "grew_versionchecker/required" },
             { label: "Install", translations: {'de': 'Installation'},  slug: "grew_versionchecker/install" },
             { label: "Config", translations: {'de': 'Config'},  slug: "grew_versionchecker/config" },
-            { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_versionchecker/license" },
+            { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_versionchecker/license", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
           ],
         },
       ],
