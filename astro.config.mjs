@@ -47,6 +47,17 @@ export default defineConfig({
             { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_versionchecker/license" },
           ],
         },
+        {
+          label: "Grew esxAddon",
+          items: [
+            { label: "Information", translations: {'de': 'Information'}, slug: "grew_esxaddon/readme", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "Requirements", translations: {'de': 'Anforderungen'},  slug: "grew_esxaddon/required" },
+            { label: "Install", translations: {'de': 'Installation'},  slug: "grew_esxaddon/install" },
+            { label: "Config", translations: {'de': 'Config'},  slug: "grew_esxaddon/config" },
+            { label: "Commands", translations: {'de': 'Kommandos'},  slug: "grew_esxaddon/commands" },
+            { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_esxaddon/license" },
+          ],
+        },
       ],
     }),
   ],
