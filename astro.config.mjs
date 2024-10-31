@@ -11,12 +11,16 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Wiki - Grew Development",
-      favicon: "./src/assets/pics/favicon.ico",
+      favicon: "/src/assets/pics/favicon.ico",
       social: {
         github: "https://github.com/grew-development/wiki",
         email: "mailto:info@grew-development.de",
       },
-      customCss: ["./src/assets/css/main.css"],
+      customCss: [
+        './src/assets/css/main.css',
+        './src/assets/css/homestyle.css',
+        './src/assets/css/pagestyle.css'
+      ],
       defaultLocale: "root",
       locales: {
         root: {
