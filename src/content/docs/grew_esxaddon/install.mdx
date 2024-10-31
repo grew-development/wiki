@@ -1,11 +1,57 @@
 ---
 title: Install Setup
 author: Sven Rönnfranz alias Grewo
-lastUpdated: 2024-10-30
+lastUpdated: 2024-10-31
 ---
 
 <head>
   <link rel="stylesheet" href="./../src/assets/css/pagestyle.css" />
 </head>
 
-Coming Soon
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
+
+This guide will show you how to install and configure the Grew esxAddon script on your server.<br/>
+The Grew esxAddon enhances your ESX framework by adding new commands and flexible exports, making server management more efficient and customizable.<br/>
+Follow the steps below to download, upload, and adjust the script to fit your server needs.<br/>
+Be sure to carefully follow the installation steps to integrate the script successfully and unlock its full potential for extended server functionality.<br/>
+<br/>
+
+<Steps>
+  0. Ensure that all required scripts are installed before proceeding.<br/>
+     If desired, install any optional scripts to enhance functionality.
+
+  1. Purchase the script in my store.
+  
+  2. Download Grew_esxAddon from <a href="https://keymaster.fivem.net/" target="_blank">`https://keymaster.fivem.net/`</a>.
+
+  3. Upload the `grew_esxAddon` folder.
+
+  4. Insert `ensure grew_esxAddon` in your server.cfg
+
+  5. Edit the config file according to your personal wishes.<br/>
+     For questions about the config file, see <a href="./config" target="_self">config</a>.
+
+  6. Optional: Add your new language using the instructions below
+
+  7. Restart your Server and enjoy
+</Steps>
+
+## Add your new language:
+To add a new language, follow these steps:
+<Steps>
+  1. Go to the `locales` folder and copy the `en.lua` file.
+  2. Rename the copied file to the language code of your desired language. Example for German: `de.lua`.
+  3. Open the new file and adjust the first line to include your language code: `lua Locales['de'] = {`
+  4. Translate the text in the file.
+  5. Keep the following points in mind:
+</Steps>
+
+<Aside type="caution">
+  Keep the first part of each line (up to the `=` sign) unchanged. Only modify the text inside the quotation marks.
+</Aside>
+<Aside type="caution">
+  Note that `%s` represents placeholders in the text. The language file describes what value will replace `%s`. Do not change this placeholder.
+</Aside>
+
+Follow these steps carefully to add and customize the new language successfully. Good luck!

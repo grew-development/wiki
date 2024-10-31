@@ -1,11 +1,58 @@
 ---
 title: Install Setup
 author: Sven Rönnfranz alias Grewo
-lastUpdated: 2024-10-30
+lastUpdated: 2024-10-31
 ---
 
 <head>
   <link rel="stylesheet" href="./../../src/assets/css/pagestyle.css" />
 </head>
 
-Kommt demnächst
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
+
+Diese Anleitung zeigt dir, wie du das Grew esxAddon Script auf deinem Server installierst und konfigurierst.<br/>
+Das Grew esxAddon erweitert dein ESX-Framework durch zusätzliche Befehle und flexible Exporte, was die Serververwaltung effizienter und anpassbarer macht.<br/>
+Befolge die Schritte unten, um das Script herunterzuladen, hochzuladen und an deine Serveranforderungen anzupassen.<br/>
+Achte darauf, die Installationsschritte sorgfältig zu befolgen, um das Script erfolgreich zu integrieren und sein volles Potenzial für erweiterte Serverfunktionen auszuschöpfen.<br/>
+<br/>
+
+<Steps>
+  0. Stelle sicher, dass alle erforderlichen Scripts installiert sind, bevor du fortfährst.<br/>
+     Installiere bei Bedarf optionale Scripts, um die Funktionalität zu erweitern.
+
+  1. Kaufe das Script in meinem Store.
+  
+  2. Lade Grew_esxAddon von <a href="https://keymaster.fivem.net/" target="_blank">`https://keymaster.fivem.net/`</a> herunter.
+
+  3. Lade den `grew_esxAddon` Ordner hoch.
+
+  4. Füge `ensure grew_esxAddon` in deine server.cfg ein.
+
+  5. Bearbeite die Konfigurationsdatei nach deinen persönlichen Wünschen.<br/>
+     Bei Fragen zur Konfigurationsdatei siehe <a href="./config" target="_self">config</a>.
+  
+  6. Optional: Fügen Sie Ihre neue Sprache anhand der unten stehenden Anweisungen hinzu.
+
+  7. Starte deinen Server neu und genieße die neuen Funktionen.
+</Steps>
+
+## Deine neue Sprache hinzufügen:
+Um eine neue Sprache hinzuzufügen, folge diesen Schritten:
+<Steps>
+  1. Gehe in den Ordner `locales` und kopiere die Datei `en.lua`.
+  2. Benenne die kopierte Datei in das Sprachkürzel deiner gewünschten Sprache um. Beispiel für Deutsch: `de.lua`.
+  3. Öffne die neue Datei und passe die erste Zeile an, indem du dein Sprachkürzel einfügst: `lua Locales['de'] = {` 
+  4. Übersetze den Text in der Datei.
+  5. Beachte folgende Punkte
+</Steps>
+
+<Aside type="caution">
+  Behalte den ersten Teil jeder Zeile (bis zum `=`-Zeichen) bei. Ändere nur den Text innerhalb der Anführungszeichen.
+</Aside>
+<Aside type="caution">
+  Achte darauf, dass `%s` Platzhalter in den Texten darstellt. In der Sprachdatei wird beschrieben, welcher Wert anstelle von `%s` eingesetzt wird.<br/>
+  Diesen Platzhalter solltest du nicht verändern.
+</Aside>
+
+Befolge diese Schritte sorgfältig, um die neue Sprache korrekt hinzuzufügen und anzupassen. Viel Erfolg!

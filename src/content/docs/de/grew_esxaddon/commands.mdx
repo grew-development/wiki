@@ -1,5 +1,5 @@
 ---
-title: Commands
+title: Befehle / Exports / Events
 author: Sven Rönnfranz alias Grewo
 lastUpdated: 2024-10-30
 next: false
@@ -9,4 +9,168 @@ next: false
   <link rel="stylesheet" href="./../../src/assets/css/pagestyle.css" />
 </head>
 
-Kommt demnächst
+import { Aside } from "@astrojs/starlight/components";
+
+Um das volle Potenzial des Grew esxAddon auszuschöpfen, bietet diese Seite eine Übersicht über die verfügbaren Befehle und Exports.<br/>
+Es wird empfohlen, das Script als required in die `fxmanifest.lua` einzutragen, um sicherzustellen, dass die Exports reibungslos geladen<br/>
+werden und in allen serverseitigen Dateien verfügbar sind. So kann das Addon nahtlos mit anderen Serverfunktionen interagieren.
+
+Falls Sie Fragen zur Einrichtung oder Nutzung des Scripts haben, zögern Sie nicht, uns zu kontaktieren. Sie erreichen uns per E-Mail oder im Support-Channel auf unserem Discord.<br/>
+
+## Befehle
+### removeitem  \<playerId> \<item> \<count>
+<details>
+  <summary>Beschreibung</summary>
+  Dieser Befehl entfernt die angegebene Anzahl eines Items vom angegebenen Benutzer. Der Befehl erfordert:
+  
+  - **playerId**: Die ID des Spielers, von dem das Item entfernt wird.
+  - **item**: Das zu entfernende Item.
+  - **count**: Die Anzahl des zu entfernenden Items.
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel entfernt 3 Einheiten "bread" (Brot) vom Spieler mit der ID 1:
+  `/removeitem 1 bread 3`
+</details>
+<details>
+  <summary>Voraussetzungen</summary>
+    - **Berechtigungen**: Nur für Benutzer mit Mod-Berechtigungen verfügbar.
+    - **Spieler online**: Der Spieler muss online sein, damit der Befehl erfolgreich ausgeführt wird.
+</details>
+<details>
+  <summary>Hinweise</summary>
+  <Aside type="caution">
+    Stelle sicher, dass der `item`-Name exakt mit dem Datenbankeintrag übereinstimmt.
+  </Aside>
+  <Aside type="caution">
+    Wenn `count` größer ist als die aktuelle Menge des Items des Spielers, kann der Befehl möglicherweise alle Einheiten dieses Items entfernen.
+  </Aside>
+</details>
+
+
+### removeweapon  \<playerId> \<weapon>
+<details>
+  <summary>Beschreibung</summary>
+  Dieser Befehl entfernt die angegebene Waffe vom angegebenen Benutzer. Der Befehl erfordert:
+  
+  - **playerId**: Die ID des Spielers, von dem die Waffe entfernt wird.
+  - **weapon**: Die zu entfernende Waffe (verwende den genauen Waffennamen aus der Datenbank).
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel entfernt die Waffe "weapon_pistol" vom Spieler mit der ID 1:
+  `/removeweapon 1 weapon_pistol`
+</details>
+<details>
+  <summary>Voraussetzungen</summary>
+    - **Berechtigungen**: Nur für Benutzer mit Mod-Berechtigungen verfügbar.
+    - **Spieler online**: Der Spieler muss online sein, damit der Befehl erfolgreich ausgeführt wird.
+</details>
+<details>
+  <summary>Hinweise</summary>
+  <Aside type="caution">
+    Stelle sicher, dass der `weapon`-Name exakt mit dem Datenbankeintrag übereinstimmt, einschließlich Groß- und Kleinschreibung.
+  </Aside>
+  <Aside type="caution">
+    Der Versuch, eine Waffe zu entfernen, die der Spieler nicht besitzt, hat keine Wirkung.
+  </Aside>
+</details>
+---
+
+## Exports
+Die folgenden Exports sind ausschließlich auf der Server-Seite verfügbar und können in allen serverseitigen Dateien verwendet werden.
+
+### getAllItems
+<details>
+  <summary>Beschreibung</summary>
+  Gibt eine Liste aller Items aus der Datenbank zurück.
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel ruft alle Items aus der Datenbank ab:
+  ```lua
+    local allItems = exports["grew_esxAddon"]:getAllItems()
+  ```
+</details>
+
+### getAllJobs
+<details>
+  <summary>Beschreibung</summary>
+  Gibt eine Liste aller Jobs aus der Datenbank zurück.
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel ruft alle Jobs aus der Datenbank ab:
+  ```lua
+  local allJobs = exports["grew_esxAddon"]:getAllJobs()
+  ```
+</details>
+
+### getAllRanks
+<details>
+  <summary>Beschreibung</summary>
+  Gibt eine Liste aller Ränge aus der Datenbank zurück.
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel ruft alle Ränge aus der Datenbank ab:
+  ```lua
+  local allRanks = exports["grew_esxAddon"]:getAllRanks()
+  ```
+</details>
+
+### getAllLicenses
+<details>
+  <summary>Beschreibung</summary>
+  Gibt eine Liste aller Lizenzen aus der Datenbank zurück.
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel ruft alle Lizenzen aus der Datenbank ab:
+  ```lua
+  local allLicenses = exports["grew_esxAddon"]:getAllLicenses()
+  ```
+</details>
+---
+
+## Events
+### triggerSyncServerCallback
+<details>
+  <summary>Beschreibung</summary>
+  Dieses Event löst einen synchronen Callback auf der Server-Seite aus. Es wartet, bis der Callback eine Antwort zurückgibt, bevor die Codeausführung fortgesetzt wird.<br/>
+  Nützlich in Fällen, in denen eine Antwort vom Server benötigt wird, bevor zusätzliche Logik auf der Client-Seite ausgeführt wird.
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel ruft `triggerSyncServerCallback` auf, um Daten vom Server abzurufen und wartet, bis eine Antwort empfangen wird:
+
+  ```lua
+    local result = exports["grew_esxAddon"]:triggerSyncServerCallback("exampleEvent", 1, "param1", "param2")
+    
+    if result then
+        print("Server-Callback erfolgreich abgeschlossen!")
+    else
+        print("Server-Callback fehlgeschlagen oder abgelaufen.")
+    end
+  ```
+</details>
+
+### triggerSyncClientCallback
+<details>
+  <summary>Beschreibung</summary>
+  Dieses Event löst einen synchronen Callback auf der Client-Seite aus.<br/>
+  Es wartet auf eine Antwort vom Client, bevor die Ausführung auf der Server-Seite fortgesetzt wird. Dies ist hilfreich, wenn die Serverlogik auf Rückmeldungen vom Client angewiesen ist. 
+</details>
+<details>
+  <summary>Beispiel</summary>
+  Dieses Beispiel verwendet `triggerSyncClientCallback`, um eine Anfrage vom Server an den Client zu senden, mit einer Timeout-Mechanik für den Fall einer Verzögerung:
+  ```lua
+    local clientResult = triggerSyncClientCallback("exampleClientEvent", 1, "paramA", "paramB")
+
+    if clientResult then
+        print("Client-Callback hat Daten erfolgreich zurückgegeben!")
+    else
+        print("Client-Callback fehlgeschlagen oder abgelaufen.")
+    end
+  ```
+</details>

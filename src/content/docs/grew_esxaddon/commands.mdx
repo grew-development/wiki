@@ -1,12 +1,176 @@
 ---
-title: Commands
+title: Commands / Exports / Events
 author: Sven Rönnfranz alias Grewo
 lastUpdated: 2024-10-30
 next: false
 ---
 
 <head>
-  <link rel="stylesheet" href="./../../src/assets/css/pagestyle.css" />
+  <link rel="stylesheet" href="./../src/assets/css/pagestyle.css" />
 </head>
 
-Coming soon
+import { Aside } from "@astrojs/starlight/components";
+
+To unlock the full potential of the Grew esxAddon, this page provides an overview of the available commands and exports.<br/>
+It is recommended to include the script as required in the `fxmanifest.lua` to ensure that exports are loaded smoothly and<br/>
+available in all server-side files, allowing the addon to interact seamlessly with other server functions.
+
+If you have any questions about setting up or using the script, feel free to reach out. You can contact us via email or in the support channel on our Discord.<br/>
+
+## Commands
+### removeitem  \<playerId> \<item> \<count>
+<details>
+  <summary>Description</summary>
+  This command removes the specified quantity of an item from the specified user. The command requires:
+  
+  - **playerId**: The ID of the player from whom the item will be removed.
+  - **item**: The item to be removed.
+  - **count**: The quantity of the item to remove.
+</details>
+<details>
+  <summary>Example</summary>
+  This example removes 3 units of "bread" from the player with ID 1:
+  `/removeitem 1 bread 3`
+</details>
+<details>
+  <summary>Requirements</summary>
+    - **Permissions**: Only available to users with mod permissions.
+    - **Player Online**: The player must be online for the command to execute successfully.
+</details>
+<details>
+  <summary>Notes</summary>
+  <Aside type="caution">
+    Ensure the `item` name matches the database item name exactly.
+  </Aside>
+  <Aside type="caution">
+    If `count` is greater than the player’s current amount of the item, the command may remove all of that item instead.
+  </Aside>
+</details>
+
+
+### removeweapon  \<playerId> \<weapon>
+<details>
+  <summary>Description</summary>
+  This command removes the specified weapon from the specified user. The command requires:
+  
+  - **playerId**: The ID of the player from whom the weapon will be removed.
+  - **weapon**: The weapon to be removed (use the exact weapon name as listed in the database).
+</details>
+<details>
+  <summary>Example</summary>
+  This example removes the weapon "weapon_pistol" from the player with ID 1:
+  `/removeweapon 1 weapon_pistol`
+</details>
+<details>
+  <summary>Requirements</summary>
+    - **Permissions**: Only available to users with mod permissions.
+    - **Player Online**: The player must be online for the command to execute successfully.
+</details>
+<details>
+  <summary>Notes</summary>
+  <Aside type="caution">
+    Ensure the `weapon` name matches the database weapon name exactly, including capitalization.
+  </Aside>
+  <Aside type="caution">
+    Attempting to remove a weapon the player does not possess will have no effect.
+  </Aside>
+</details>
+---
+
+## Exports
+The following exports are available exclusively on the server side and can be used in all server-side files.
+
+### getAllItems
+<details>
+  <summary>Description</summary>
+  Returns a list of all items from the database.
+</details>
+<details>
+  <summary>Example</summary>
+  This example retrieves all items from the database:
+  ```lua
+    local allItems = exports["grew_esxAddon"]:getAllItems()
+  ```
+</details>
+
+### getAllJobs
+<details>
+  <summary>Description</summary>
+  Returns a list of all jobs from the database.
+</details>
+<details>
+  <summary>Example</summary>
+  This example retrieves all jobs from the database:
+  ```lua
+    local allJobs = exports["grew_esxAddon"]:getAllJobs()
+  ```
+</details>
+
+### getAllRanks
+<details>
+  <summary>Description</summary>
+  Returns a list of all ranks from the database.
+</details>
+<details>
+  <summary>Example</summary>
+  This example retrieves all ranks from the database:
+  ```lua
+  local allRanks = exports["grew_esxAddon"]:getAllRanks()
+  ```
+</details>
+
+### getAllLicenses
+<details>
+  <summary>Description</summary>
+  Returns a list of all licenses from the database.
+</details>
+<details>
+  <summary>Example</summary>
+  This example retrieves all licenses from the database:
+  ```lua
+  local allLicenses = exports["grew_esxAddon"]:getAllLicenses()
+  ```
+</details>
+---
+
+## Events
+### triggerSyncServerCallback
+<details>
+  <summary>Description</summary>
+  This event triggers a synchronous callback on the server side. It waits for the callback to return a response before continuing the code execution.<br/>
+  Useful for cases where you need a response from the server before proceeding with additional logic on the client side.
+</details>
+<details>
+  <summary>Example</summary>
+  This example calls `triggerSyncServerCallback` to retrieve data from the server, waiting until a response is received:
+
+  ```lua
+    local result = exports["grew_esxAddon"]:triggerSyncServerCallback("exampleEvent", 1, "param1", "param2")
+    
+    if result then
+        print("Server callback completed successfully!")
+    else
+        print("Server callback failed or timed out.")
+    end
+  ```
+</details>
+
+### triggerSyncClientCallback
+<details>
+  <summary>Description</summary>
+  This event triggers a synchronous callback on the client side.<br/>
+  It waits for a response from the client before continuing execution on the server side, which is helpful in cases where server logic relies on client feedback.
+</details>
+<details>
+  <summary>Example</summary>
+  This example uses `triggerSyncClientCallback` to send a request from the server to the client, with a timeout mechanism in case of a delay:
+  ``` lua
+    local clientResult = triggerSyncClientCallback("exampleClientEvent", 1, "paramA", "paramB")
+
+    if clientResult then
+        print("Client callback returned data successfully!")
+    else
+        print("Client callback failed or timed out.")
+    end
+  ```
+</details>
