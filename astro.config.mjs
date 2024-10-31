@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Wiki - Grew Development",
-      favicon: "/src/assets/pics/favicon.ico",
+      favicon: "/img/favicon.ico",
       social: {
         github: "https://github.com/grew-development/wiki",
         email: "mailto:info@grew-development.de",
