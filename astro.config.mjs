@@ -62,6 +62,17 @@ export default defineConfig({
             { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_esxaddon/license" },
           ],
         },
+        {
+          label: "Grew NPC",
+          items: [
+            { label: "Information", translations: {'de': 'Information'}, slug: "grew_npc/readme", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "Required/Optional Scripts", translations: {'de': 'Erforderliche/Optionale Scripts'},  slug: "grew_npc/required", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "Install", translations: {'de': 'Installation'},  slug: "grew_npc/install", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "Config", translations: {'de': 'Config'},  slug: "grew_npc/config", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            //{ label: "Commands / Exports / Events", translations: {'de': 'Befehle / Exports / Events'},  slug: "grew_npc/commands", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_npc/license" },
+          ],
+        },
       ],
     }),
   ],

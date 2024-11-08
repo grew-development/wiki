@@ -1,0 +1,115 @@
+---
+title: Config
+author: Sven Rönnfranz alias Grewo
+lastUpdated: 2024-11-01
+next: false
+---
+
+## Config.lua
+``` lua
+Config = {}
+
+Config.CheckVersion = true -- Diese Einstellung bestimmt, ob die Version des Skripts überprüft wird. Grew_Versionchecker ist erforderlich.
+
+--- Standard-Einstellungen ---
+Config.NPCsDefaultType = 4 -- Hier sollte der Ped-Typ eingestellt werden, der unter https://docs.fivem.net/natives/?_0xFF059E1E4C01E63C zu finden ist.
+Config.DrawRange = 6 -- Legt die Entfernung fest, in der der Text lesbar wird.
+
+Config.NPCfile = "config/npcs.json" -- Hier sollte der Pfad zur Konfigurationsdatei für die NPCs eingefügt werden.
+
+Config.NoNPC = {
+    active = true,
+    disable = {
+        civis = true, -- Alle Zivilisten deaktivieren
+        cars = true, -- Alle Zivilfahrzeuge deaktivieren
+        emergency = {
+            all = true, -- Alle Einsatzfahrzeuge deaktivieren
+            policeservice = false, -- Polizeidienst deaktivieren
+            fireservice = false, -- Feuerwehrdienst deaktivieren
+            rescueservice = false, -- Rettungsdienst deaktivieren
+        },
+        animals = true, -- Tiere deaktivieren
+        otherpeds = true, -- Andere Peds deaktivieren
+    }
+}
+```
+
+## NPCS.json
+``` json
+[{
+	"Meetingpoint": [ -- Bereich Treffpunkt, dieser kann erweitert werden.
+		{
+			"title": "Infopoint",
+			"subtitle": "Willkommen am Treffpunkt",
+			"model": "a_m_y_bevhills_02", -- Hier sollte das Modell eingestellt werden, das unter https://docs.fivem.net/docs/game-references/ped-models/ zu finden ist.
+			"npcs": [ -- Jeder Abschnitt hier repräsentiert einen einzelnen NPC mit eigenen Einstellungen; wenn nicht angegeben, wird der Standardwert verwendet.
+				{
+					"pos": {"x": 218.15, "y": -863.65, "z": 29.28, "h": 342.0},
+					"name": "Michael",
+					"title": null,
+					"subtitle": null,
+					"type":	null,
+					"model": null,
+					"function": null
+				},
+				{
+					"pos": {"x": 151.75, "y": -983.5, "z": 29.10, "h": 211.20},
+					"name": "James",
+					"title": null,
+					"subtitle": null,
+					"type":	null,
+					"model": null,
+					"function": null
+				},
+				{
+					"pos": {"x": 169.75, "y": -911.00, "z": 29.70, "h": 162.85},
+					"name": "Jackson",
+					"title": null,
+					"subtitle": null,
+					"type":	null,
+					"model": null,
+					"function": null
+				}
+			]
+		}
+	]
+}]
+```
+
+## NPC Default PedTypes
+Ich habe die Liste aus dem oben genannten Link zu meiner Wiki hinzugefügt.<br/>
+Das aktuellste Update, das ich für diese Informationen habe, stammt vom 01.11.2024.
+```
+enum ePedType {
+	PED_TYPE_PLAYER_0 = 0,
+	PED_TYPE_PLAYER_1 = 1,
+	PED_TYPE_NETWORK_PLAYER = 2,
+	PED_TYPE_PLAYER_2 = 3,
+	PED_TYPE_CIVMALE = 4,
+	PED_TYPE_CIVFEMALE = 5,
+	PED_TYPE_COP = 6,
+	PED_TYPE_GANG_ALBANIAN = 7,
+	PED_TYPE_GANG_BIKER_1 = 8,
+	PED_TYPE_GANG_BIKER_2 = 9,
+	PED_TYPE_GANG_ITALIAN = 10,
+	PED_TYPE_GANG_RUSSIAN = 11,
+	PED_TYPE_GANG_RUSSIAN_2 = 12,
+	PED_TYPE_GANG_IRISH = 13,
+	PED_TYPE_GANG_JAMAICAN = 14,
+	PED_TYPE_GANG_AFRICAN_AMERICAN = 15,
+	PED_TYPE_GANG_KOREAN = 16,
+	PED_TYPE_GANG_CHINESE_JAPANESE = 17,
+	PED_TYPE_GANG_PUERTO_RICAN = 18,
+	PED_TYPE_DEALER = 19,
+	PED_TYPE_MEDIC = 20,
+	PED_TYPE_FIREMAN = 21,
+	PED_TYPE_CRIMINAL = 22,
+	PED_TYPE_BUM = 23,
+	PED_TYPE_PROSTITUTE = 24,
+	PED_TYPE_SPECIAL = 25,
+	PED_TYPE_MISSION = 26,
+	PED_TYPE_SWAT = 27,
+	PED_TYPE_ANIMAL = 28,
+	PED_TYPE_ARMY = 29
+};
+```
