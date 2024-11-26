@@ -1,0 +1,52 @@
+---
+title: Setup
+author: Sven Rönnfranz alias Grewo
+lastUpdated: 2024-11-26
+---
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
+
+Diese Anleitung zeigt dir, wie du das *Grew Plasticsurgeon*-Script auf deinem Server installierst und konfigurierst.<br/>
+Folge den untenstehenden Schritten, um das Script herunterzuladen, hochzuladen und anzupassen, damit es deinen Serveranforderungen entspricht.<br/>
+Achte darauf, die Installationsanleitung sorgfältig zu befolgen, um das Script erfolgreich zu integrieren und das volle Potenzial für erweiterte Serverfunktionen freizuschalten.<br/>
+<br/>
+
+<Steps>
+  0. Stelle sicher, dass alle benötigten Scripts vor der Installation installiert sind.<br/>
+     Optional kannst du zusätzliche Scripts installieren, um die Funktionalität zu erweitern.
+
+  1. Kaufe das Script in meinem Store.
+  
+  2. Lade *grew_plasticsurgeon* von <a href="https://keymaster.fivem.net/" target="_blank">`https://keymaster.fivem.net/`</a> herunter.
+
+  3. Lade den Ordner `grew_plasticsurgeon` auf deinen Server hoch.
+
+  4. Füge `ensure grew_plasticsurgeon` in deine server.cfg ein.
+
+  5. Bearbeite die Config-Datei nach deinen persönlichen Wünschen.<br/>
+     Bei Fragen zur Config-Datei sieh dir die Anleitung unter <a href="/grew_plasticsurgeon/config" target="_self">config</a> an.
+
+  6. Optional: Füge deine eigene Sprache hinzu, indem du den untenstehenden Anweisungen folgst.
+
+  7. Starte deinen Server neu und genieße das Script.
+</Steps>
+
+## Eigene Sprache hinzufügen:
+Um eine neue Sprache hinzuzufügen, folge diesen Schritten:
+<Steps>
+  1. Gehe in den Ordner `locales` und kopiere die Datei `en.lua`.
+  2. Benenne die kopierte Datei in den Sprachcode der gewünschten Sprache um. Beispiel für Deutsch: `de.lua`.
+  3. Öffne die neue Datei und passe die erste Zeile an, um den Sprachcode einzufügen: `lua Locales['de'] = {`
+  4. Übersetze den Text in der Datei.
+  5. Beachte dabei die folgenden Punkte:
+</Steps>
+
+<Aside type="caution">
+  Lass den ersten Teil jeder Zeile (bis zum `=`-Zeichen) unverändert. Übersetze nur den Text innerhalb der Anführungszeichen.
+</Aside>
+<Aside type="caution">
+  Beachte, dass `%s` Platzhalter im Text darstellen. Die Sprachdatei beschreibt, welcher Wert `%s` ersetzt. Verändere diesen Platzhalter nicht.
+</Aside>
+
+Befolge diese Schritte sorgfältig, um die neue Sprache erfolgreich hinzuzufügen und anzupassen. Viel Erfolg!
+

@@ -1,0 +1,86 @@
+---
+title: Config
+author: Sven Rönnfranz alias Grewo
+lastUpdated: 2024-11-26
+---
+
+## Config.lua
+```lua
+Config = {}
+
+-- DefaultSettings
+    Config.Locale = 'en' -- Select your language. Default: en
+    Config.CheckVersion = true -- This setting determines whether the script's version is checked. Grew_Versionchecker is required
+    Config.KeyControle = 38 -- Default: 38 (E)
+
+-- Blip and NPCs
+    Config.NPCsDefaultType = 4 -- Default NPC type (e.g., for behavior or appearance of NPCs)
+    Config.EnableBlips = true -- Enable blips on the map (shows NPC locations)
+    Config.InteractionRadius = 2 -- Radius within which players can interact with NPCs
+    Config.DrawRange = 6 -- Distance at which the NPC and blip are visible
+    Config.Enable3DText = true -- Display 3D text above NPCs (e.g., interaction hints)
+
+-- Create NPCs
+    Config.NPCS = {
+        {
+            id = 'ambulance_entry', -- Unique ID of the NPC (used for reference or functions)
+            model = "s_m_m_scientist_01", -- NPC model (https://docs.fivem.net/docs/game-references/ped-models/)
+            type = nil, -- NPC type (if specific behavior types are defined)
+            pos = vector3(299.2581, -584.6854, 42.2608), -- NPC's position in the game
+            head = 64.4316, -- NPC's facing direction (rotation)
+            title = nil, -- NPC's title (default: 'blip_name' from en.lua)
+            helpnotification = _U('help_notification_3D').." Cost: 500$", -- Interaction hint (default: 'help_notification' or 'help_notification_3D')
+            blipsetting = {
+                enable = true, -- Enable the blip (default: true)
+                sprite = nil, -- Icon for the blip (default: 366)
+                display = nil, -- Blip display mode (default: 2 - https://docs.fivem.net/docs/game-references/blips)
+                color = nil, -- Blip color (default: 38 - https://docs.fivem.net/docs/game-references/blips/#blip-colors)
+                scale = nil, -- Blip size (default: 1)
+            },
+            buysettings = {
+                enable = true, -- Enable purchasing
+                cost = 500, -- Cost for the interaction
+                EnableAccounts = {'money', 'bank'}, -- Accepted payment methods
+            }
+        },
+        [...]
+    }
+```
+
+## NPC Default PedTypes
+I have included the list from the link mentioned above for your reference.<br/>
+The most recent update I have for this information is from 01.11.2024.
+```
+enum ePedType {
+	PED_TYPE_PLAYER_0 = 0,
+	PED_TYPE_PLAYER_1 = 1,
+	PED_TYPE_NETWORK_PLAYER = 2,
+	PED_TYPE_PLAYER_2 = 3,
+	PED_TYPE_CIVMALE = 4,
+	PED_TYPE_CIVFEMALE = 5,
+	PED_TYPE_COP = 6,
+	PED_TYPE_GANG_ALBANIAN = 7,
+	PED_TYPE_GANG_BIKER_1 = 8,
+	PED_TYPE_GANG_BIKER_2 = 9,
+	PED_TYPE_GANG_ITALIAN = 10,
+	PED_TYPE_GANG_RUSSIAN = 11,
+	PED_TYPE_GANG_RUSSIAN_2 = 12,
+	PED_TYPE_GANG_IRISH = 13,
+	PED_TYPE_GANG_JAMAICAN = 14,
+	PED_TYPE_GANG_AFRICAN_AMERICAN = 15,
+	PED_TYPE_GANG_KOREAN = 16,
+	PED_TYPE_GANG_CHINESE_JAPANESE = 17,
+	PED_TYPE_GANG_PUERTO_RICAN = 18,
+	PED_TYPE_DEALER = 19,
+	PED_TYPE_MEDIC = 20,
+	PED_TYPE_FIREMAN = 21,
+	PED_TYPE_CRIMINAL = 22,
+	PED_TYPE_BUM = 23,
+	PED_TYPE_PROSTITUTE = 24,
+	PED_TYPE_SPECIAL = 25,
+	PED_TYPE_MISSION = 26,
+	PED_TYPE_SWAT = 27,
+	PED_TYPE_ANIMAL = 28,
+	PED_TYPE_ARMY = 29
+};
+```
