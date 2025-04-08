@@ -5,16 +5,16 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   site: process.env.CI
-    ? "https://wiki.grew-development.de"
+    ? "https://wiki.grew-solutions.de"
     : "http://localhost:4321",
   base: process.env.CI ? "/wiki" : undefined,
   integrations: [
     starlight({
-      title: "Wiki - Grew Development",
+      title: "Wiki - Grew Solutions",
       favicon: "/img/favicon.ico",
       social: {
         github: "https://github.com/grew-development/wiki",
-        email: "mailto:info@grew-development.de",
+        email: "mailto:info@grew-solutions.de",
       },
       customCss: [
         './src/assets/css/main.css',
