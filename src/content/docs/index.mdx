@@ -21,22 +21,29 @@ hero:
         target: _blank
 ---
 
-{/*
 import { Card, CardGrid } from "@astrojs/starlight/components";
+import InfoCard from "../../components/InfoCard.astro";
 
-## Next steps
 <CardGrid stagger>
-  <Card title="Update content" icon="pencil">
-    Edit `src/content/docs/index.mdx` to see this page change.
+  <InfoCard title="Updates" icon="information">
+    We have a new script in our Documentation!<br/>
+    * <a href="/grew_plasticsurgeon/readme" target="_blank">Grew Plasticsurgeon</a><br/>
+    * <a href="/grew_npc/readme" target="_blank">Grew NPC</a><br/>
+  </InfoCard>
+
+  <Card title="About this Site" icon="open-book">
+    This wiki serves as the central documentation for all scripts, tools, and projects published under the name<br/>
+    **Grew Solutions**.<br/>
+    <br/>
+    Here you'll find:<br/>
+    - Technical explanations of functions and modules  
+    - Installation and setup instructions  
+    - Tips for usage and customization  
+    - Version notes and planned features  
+    <br/>
+    The wiki is here to help you stay organized, understand how things work, and work efficiently with the projects.<br/>
+    If you have any questions or suggestions, feel free to reach out.  
+    Enjoy exploring!
   </Card>
-  <Card title="Add new content" icon="add-document">
-    Add Markdown or MDX files to `src/content/docs` to create new pages.
-  </Card>
-  <Card title="Configure your site" icon="setting">
-    Edit your `sidebar` and other config in `astro.config.mjs`.
-  </Card>
-  <Card title="Read the docs" icon="open-book">
-    Learn more in [the Starlight wiki](https://starlight.astro.build/).
-  </Card>
+
 </CardGrid>
-*/}

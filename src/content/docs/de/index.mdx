@@ -20,23 +20,30 @@ hero:
         target: _blank
 ---
 
-{/*
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import InfoCard from "../../../components/InfoCard.astro";
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
-## Next steps
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight wiki](https://starlight.astro.build/).
-	</Card>
+  <InfoCard title="Updates" icon="information">
+      Es gibt neue Skripte in unserer Dokumentation!<br/>
+      * <a href="/grew_plasticsurgeon/readme" target="_blank">Grew Plasticsurgeon</a><br/>
+      * <a href="/grew_npc/readme" target="_blank">Grew NPC</a><br/>
+  </InfoCard>
+  
+  <Card title="Über diese Seite" icon="open-book">
+    Diese Wiki dient als zentrale Dokumentation für alle Skripte, Tools und Projekte,  
+    die unter dem Namen<br/>
+    **Grew Solutions** veröffentlicht werden.<br/>
+    <br/>
+    Hier findest du:<br/>
+    - Technische Erklärungen zu Funktionen und Modulen  
+    - Installations- und Einrichtungshinweise  
+    - Tipps zur Nutzung und Erweiterung  
+    - Versionshinweise und geplante Funktionen  
+    <br/>
+    Diese Wiki soll dir helfen, den Überblick zu behalten, Zusammenhänge zu verstehen  
+    und effizient mit den Projekten zu arbeiten.<br/>
+    Wenn du Fragen oder Anregungen hast, melde dich gerne.  
+    Viel Spaß beim Stöbern!
+  </Card>
 </CardGrid>
-*/}
