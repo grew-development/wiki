@@ -11,11 +11,12 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Wiki - Grew Solutions",
-      favicon: "/img/favicon.ico",
-      social: {
-        github: "https://github.com/grew-development/wiki",
-        email: "mailto:info@grew-solutions.de",
-      },
+      favicon: "/img/logo_quader.ico",
+      social: [
+        { icon: 'discord', label: 'Discord', href: 'https://discord.grew-solutions.de' },
+        { icon: 'github', label: 'Github', href: 'https://github.com/grew-development/wiki' },
+        { icon: 'email', label: 'E-Mail', href: 'mailto:info@grew-solutions.de' },
+      ],
       customCss: [
         './src/assets/css/main.css',
         './src/assets/css/homestyle.css',
