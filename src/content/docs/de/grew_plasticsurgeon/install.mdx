@@ -34,18 +34,14 @@ Achte darauf, die Installationsanleitung sorgfältig zu befolgen, um das Script 
 ## Eigene Sprache hinzufügen:
 Um eine neue Sprache hinzuzufügen, folge diesen Schritten:
 <Steps>
-  1. Gehe in den Ordner `locales` und kopiere die Datei `en.lua`.
-  2. Benenne die kopierte Datei in den Sprachcode der gewünschten Sprache um. Beispiel für Deutsch: `de.lua`.
-  3. Öffne die neue Datei und passe die erste Zeile an, um den Sprachcode einzufügen: `lua Locales['de'] = {`
-  4. Übersetze den Text in der Datei.
+  1. Gehe in den Ordner `locales` und kopiere die Datei `en.json`.
+  2. Benenne die kopierte Datei in den Sprachcode der gewünschten Sprache um. Beispiel für Deutsch: `de.json`.
+  3. Öffne die neue Datei und Übersetze den Text in der Datei.
   5. Beachte dabei die folgenden Punkte:
 </Steps>
 
 <Aside type="caution">
-  Lass den ersten Teil jeder Zeile (bis zum `=`-Zeichen) unverändert. Übersetze nur den Text innerhalb der Anführungszeichen.
-</Aside>
-<Aside type="caution">
-  Beachte, dass `%s` Platzhalter im Text darstellen. Die Sprachdatei beschreibt, welcher Wert `%s` ersetzt. Verändere diesen Platzhalter nicht.
+  Lass den ersten Teil jeder Zeile (bis zum `:`-Zeichen) unverändert. Übersetze nur den Text innerhalb der Anführungszeichen.
 </Aside>
 
 Befolge diese Schritte sorgfältig, um die neue Sprache erfolgreich hinzuzufügen und anzupassen. Viel Erfolg!

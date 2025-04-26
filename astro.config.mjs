@@ -45,7 +45,7 @@ export default defineConfig({
         {
           label: "Grew Versionchecker",
           items: [
-            { label: "Information", translations: {'de': 'Information'}, slug: "grew_versionchecker/readme"},
+            { label: "Information", translations: {'de': 'Information'}, slug: "grew_versionchecker/readme", badge: { text: {en:'Update', 'de':'Update'}, variant: 'note' }},
             //{ label: "Requirements", translations: {'de': 'Anforderungen'},  slug: "grew_versionchecker/required" },
             { label: "Install", translations: {'de': 'Installation'},  slug: "grew_versionchecker/install" },
             { label: "Config", translations: {'de': 'Config'},  slug: "grew_versionchecker/config" },
@@ -77,12 +77,12 @@ export default defineConfig({
         {
           label: "Grew Plasticsurgeon",
           items: [
-            { label: "Information", translations: {'de': 'Information'}, slug: "grew_plasticsurgeon/readme", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
-            { label: "Required/Optional Scripts", translations: {'de': 'Erforderliche/Optionale Scripts'},  slug: "grew_plasticsurgeon/required", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
-            { label: "Install", translations: {'de': 'Installation'},  slug: "grew_plasticsurgeon/install", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
-            { label: "Config", translations: {'de': 'Config'},  slug: "grew_plasticsurgeon/config", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "Information", translations: {'de': 'Information'}, slug: "grew_plasticsurgeon/readme", badge: { text: {en:'Update', 'de':'Update'}, variant: 'note' }},
+            { label: "Required/Optional Scripts", translations: {'de': 'Erforderliche/Optionale Scripts'},  slug: "grew_plasticsurgeon/required", badge: { text: {en:'Update', 'de':'Update'}, variant: 'note' }},
+            { label: "Install", translations: {'de': 'Installation'},  slug: "grew_plasticsurgeon/install", badge: { text: {en:'Update', 'de':'Update'}, variant: 'note' }},
+            { label: "Config", translations: {'de': 'Config'},  slug: "grew_plasticsurgeon/config"},
             //{ label: "Commands / Exports / Events", translations: {'de': 'Befehle / Exports / Events'},  slug: "grew_plasticsurgeon/commands"},
-            { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_plasticsurgeon/license", badge: { text: {en:'New', 'de':'Neu'}, variant: 'tip' }},
+            { label: "License", translations: {'de': 'Lizenz'},  slug: "grew_plasticsurgeon/license", badge: { text: {en:'Update', 'de':'Update'}, variant: 'note' }},
           ],
         },
       ],

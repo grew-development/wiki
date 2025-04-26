@@ -34,18 +34,14 @@ Be sure to carefully follow the installation steps to integrate the script succe
 ## Add your new language:
 To add a new language, follow these steps:
 <Steps>
-  1. Go to the `locales` folder and copy the `en.lua` file.
-  2. Rename the copied file to the language code of your desired language. Example for German: `de.lua`.
-  3. Open the new file and adjust the first line to include your language code: `lua Locales['de'] = {`
-  4. Translate the text in the file.
+  1. Go to the `locales` folder and copy the `en.json` file.
+  2. Rename the copied file to the language code of your desired language. Example for German: `de.json`.
+  3. Open the new file and translate the text in the file.
   5. Keep the following points in mind:
 </Steps>
 
 <Aside type="caution">
-  Keep the first part of each line (up to the `=` sign) unchanged. Only modify the text inside the quotation marks.
-</Aside>
-<Aside type="caution">
-  Note that `%s` represents placeholders in the text. The language file describes what value will replace `%s`. Do not change this placeholder.
+  Keep the first part of each line (up to the `:` sign) unchanged. Only modify the text inside the quotation marks.
 </Aside>
 
 Follow these steps carefully to add and customize the new language successfully. Good luck!
